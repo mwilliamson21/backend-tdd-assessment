@@ -29,18 +29,22 @@ def main(args):
     # Get the raw text input, unchanged
     text = namespace.text
     upper_flag = namespace.upper
+    lower_flag = namespace.lower
+    title_flag = namespace.title
 
     # Perform the requested text transformation:
     if upper_flag:
         text = text.upper()
     if lower_flag:
         text = text.lower()
+    if title_flag:
+        text = text.title()
 
     return text
 
 
 if __name__ == '__main__':  # This is called an "import guard"
-    print("My name is {}".format(__name))
+    print("My name is {}".format(__name__))
     print("I'm running direct from cmd line")
     # give cmd line arguments to main, get result back, print result
     print(main(sys.argv[1:]))
